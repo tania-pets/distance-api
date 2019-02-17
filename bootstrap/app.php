@@ -23,9 +23,11 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades();
 
 // $app->withEloquent();
+
+$app->configure('swagger-lume');
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +79,7 @@ $app->singleton(
 | totally optional, so you are not required to uncomment this line.
 |
 */
+$app->register(\SwaggerLume\ServiceProvider::class);
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
@@ -92,6 +95,7 @@ $app->singleton(
 | can respond to, as well as the controllers that may handle them.
 |
 */
+
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
