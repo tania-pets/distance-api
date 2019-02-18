@@ -1,21 +1,43 @@
-# Lumen PHP Framework
+# Super simple journeys api mock up
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+This is a simple mockup of a journeys application built on lumen 5.7.
+Requires php > 7.1.3.
+Swagger has been used to produce the api's specs.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+You can find the specs online here: http://journeys.exasa.gr/api/documentation
 
-## Official Documentation
+## Installation
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+### With docker
 
-## Security Vulnerabilities
+- Clone the repo on your local machine
+```git clone https://github.com/tania-pets/distance-api.git```
+- Move to project's directory
+```cd distance-api```
+- Built the docker's composer
+```docker-compose build```
+- Launch the docker app
+```docker-compose up -d```
+- Install with composer
+```docker-compose exec app composer install```
+- copy .env.example  to .env
+- Generate swagger docs
+```docker-compose exec app php artisan swagger-lume:generate```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+You should be able to access the api docs on http://localhost:8080/api/documentation
 
-## License
+** NOTE: Uses port 8080 for apache . If port already in use, modify it in docker-compose.yml
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+### On your local machine
+
+- Clone the repo on your local machine
+```git clone https://github.com/tania-pets/distance-api.git```
+- Move to project's directory
+```cd distance-api```
+- Install with composer
+```composer install```
+- copy .env.example  to .env
+- Generate swagger docs
+```php artisan swagger-lume:generate```
