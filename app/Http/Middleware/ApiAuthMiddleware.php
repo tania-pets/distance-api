@@ -23,9 +23,10 @@ class ApiAuthMiddleware
         else if (!$request->username) {
             $error = new ResponseError(401, 'username_missing', 'Please attach username to your request');
         }
-
-        //Validate token and username here
-        /**************************/
+        
+        /*******************************/
+        /* Validate token and username omitted */
+        /*******************************/
         return isset($error) ? $error->getResponse() : $next($request);
     }
 }

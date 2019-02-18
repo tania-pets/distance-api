@@ -15,4 +15,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+    public function boot()
+    {
+        \Illuminate\Support\Facades\Validator::extend('iso_date', 'Penance316\Validators\IsoDateValidator@validateIsoDate');
+    }
 }

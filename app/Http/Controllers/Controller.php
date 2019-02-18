@@ -19,14 +19,14 @@ class Controller extends BaseController
 
 
     /**
-    * @OA\Schema(schema="NewJourney",
+    * @OA\Schema(schema="JourneyModel",
     *   type="object",
     *   required={"distance,type,start_at,end_at"},
     *   @OA\Property(
     *     property="distance",
     *     type="number",
     *     format="float",
-    *     example="2,3",
+    *     example=2.4,
     *     description="The distance traveled in km"
     *   ),
     *   @OA\Property(
@@ -56,7 +56,7 @@ class Controller extends BaseController
     * @OA\Schema(schema="ErrorModel",
     *   type="object",
     *   @OA\Property(
-    *     property="code",
+    *     property="error_code",
     *     type="string",
     *   ),
     *   @OA\Property(
@@ -82,12 +82,21 @@ class Controller extends BaseController
 
     /**
      *  @OA\SecurityScheme(
-     *      securityScheme="Bearer",
-     *      type="http",
-     *      scheme="bearer",
-     *      bearerFormat="JWT"
+     *      securityScheme="ApiKeyAuth",
+     *      type="apiKey",
+     *      in="query",
+     *      name="auth_token"
      * )
      */
+
+     /**
+      *  @OA\SecurityScheme(
+      *      securityScheme="Username",
+      *      type="apiKey",
+      *      in="query",
+      *      name="username"
+      * )
+      */
 
 
 
