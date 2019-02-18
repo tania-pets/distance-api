@@ -12,6 +12,7 @@ Class Journey
 
     protected $fillable = ['distance', 'type', 'start_at', 'end_at'];
 
+    const JOURNEY_TYPES = ['walking', 'biking', 'driving', 'flying'];
 
     public function __construct(array $data)
     {
@@ -25,7 +26,7 @@ Class Journey
     }
 
     public function toArray(): array
-    {   
+    {
         return $this->data;
     }
 
